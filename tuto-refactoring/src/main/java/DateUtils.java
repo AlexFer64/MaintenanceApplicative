@@ -8,4 +8,9 @@ public class DateUtils {
     public static boolean extracted(LocalDate startingDate, LocalDate endingDate, LocalDate now) {
         return now.isAfter(startingDate) && now.isBefore(endingDate);
     }
+
+    public static boolean isDateOutside(LocalDate date, LocalDate startingDate,
+                                        LocalDate endingDate) {
+        return !extracted(date, startingDate, endingDate);
+    }
 }
